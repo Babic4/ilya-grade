@@ -2,6 +2,23 @@
 	import { Star, Clock } from '@lucide/svelte'
 
 	let { review } = $props()
+
+	const formatTime = (time: {
+		seconds: number
+		nanoseconds: number
+	}): string => {
+		const milliseconds =
+			time.seconds * 1000 + Math.floor(time.nanoseconds / 1e6)
+		const date = new Date(milliseconds)
+
+		const hours = date.getHours().toString().padStart(2, '0')
+		const minutes = date.getMinutes().toString().padStart(2, '0')
+		const month = date.toLocaleString('en-US', { month: 'long' })
+		const day = date.getDate()
+		const year = date.getFullYear()
+
+		return `${hours}:${minutes} ${month} ${day}, ${year}`
+	}
 </script>
 
 <div class="border border-white/5 rounded-xl inset">
@@ -23,8 +40,8 @@
 		</div>
 		<div class="flex items-center gap-[0.5rem]">
 			<Clock size={14} color="oklch(55.6% 0 0)" />
-			<p class="text-[0.825rem] text-neutral-500">
-				{review.time}
+			<p class="text-[0.825rem] text-neutral-500 leading-none">
+				{formatTime(review.time)}
 			</p>
 		</div>
 	</div>

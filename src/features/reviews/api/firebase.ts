@@ -31,7 +31,8 @@ const reviewsQuery = query(reviewsCollection)
 
 export function useReviews() {
 	const getReviews = async () => {
-		return await getDocs(reviewsQuery)
+		const querySnapshot = await getDocs(reviewsQuery)
+		return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
 	}
 
 	const addReview = (data: {
