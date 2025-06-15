@@ -6,10 +6,13 @@
 	<div
 		class="flex justify-between pt-[80px] pb-[40px] px-[40px] items-center max-w-[820px] w-full mx-auto border-t-1 border-t-white/5"
 	>
-		<div class="text-xs">@Dmitriy Babich, 2025</div>
+		<div class="text-[0.825rem] text-neutral-500 tracking-wider">
+			Copyright © 2025 Dmitriy Babich. All rights reserved.
+		</div>
 		<Button
+			href="https://t.me/l3Dima"
 			variant="ghost"
-			class="text-[#24A1DE] hover:text-[#24A1DE] hover:bg-[#24A1DE]/20!"
+			class="[&_svg:not([class*='size-'])]:size-5 h-min! p-[0.5rem]! text-[#24A1DE] hover:text-[#24A1DE] hover:bg-[#24A1DE]/20!"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
