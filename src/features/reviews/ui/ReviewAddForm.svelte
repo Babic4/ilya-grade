@@ -2,16 +2,22 @@
 	import { Input } from '$shared/ui/kit/input'
 	import { Textarea } from '$shared/ui/kit/textarea'
 	import { Button } from '$shared/ui/kit/button'
-	import { Star } from '@lucide/svelte'
 	import RatingInput from './RatingInput.svelte'
+	import { useReviews } from '../api/firebase'
+
+	const { getReviews, addReview } = useReviews()
+
+	getReviews().then(result => {
+		console.log(result)
+	})
 
 	let name = $state('')
 	let message = $state('')
 	let rating = $state(0)
 
 	const sendForm = () => {
-		console.log('setasd')
-		console.log('SEND', { name, message, rating })
+		const data = { name, message, rating }
+		addReview(data)
 		resetForm()
 	}
 

@@ -2,7 +2,7 @@
 	import Header from '../features/header/Header.svelte'
 	import Footer from '../features/footer/Footer.svelte'
 	import { Button } from '$shared/ui/kit/button'
-	import ReviewBox from '../features/grade-list/ReviewBox.svelte'
+	import ReviewBox from '../features/reviews/ReviewBox.svelte'
 </script>
 
 <Header />
