@@ -23,8 +23,8 @@
 			variant="ghost"
 			class={cn(
 				"p-[0.25rem]! text-neutral-500 hover:text-amber-300 hover:bg-transparent! hover:scale-125 [&_svg:not([class*='size-'])]:size-5",
-				hoverAnimate(i + 1) ? 'text-amber-300 ' : '',
-				checkActive(i + 1) ? 'text-amber-300 ' : ''
+				hoverAnimate(i + 1) ? 'text-amber-300' : '',
+				checkActive(i + 1) ? 'text-amber-300' : ''
 			)}
 			onclick={() => {
 				value = i + 1

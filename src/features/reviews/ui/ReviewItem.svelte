@@ -21,11 +21,16 @@
 	}
 </script>
 
-<div class="border border-white/5 rounded-xl inset">
+<div class="border border-white/5 rounded-xl inset group">
 	<div class="flex items-center justify-between gap-[2rem] px-6 py-3 relative">
 		<div class="flex items-center gap-[1rem]">
-			<p class="text-[0.825rem] tracking-wider text-neutral-500">
-				{review.name}
+			<p class="text-[0.825rem] tracking-wider text-neutral-500 relative">
+				<span
+					class="bg-gradient-to-r from-black/30 via-black/90 to-black/30 box-decoration-clone group-hover:opacity-30 opacity-0 transition text-transparent"
+				>
+					{review.name}</span
+				>
+				<span class="absolute left-0 top-0">{review.name}</span>
 			</p>
 			<div
 				class="flex items-center justify-center gap-[0.5rem] px-1.5 py-0.5 rounded-md bg-amber-300/5"

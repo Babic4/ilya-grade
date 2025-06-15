@@ -1,12 +1,11 @@
+import { writable } from 'svelte/store'
 import { initializeApp } from 'firebase/app'
 
 import {
 	getFirestore,
 	collection,
-	getDocs,
 	addDoc,
 	query,
-	where,
 	orderBy,
 	onSnapshot,
 	serverTimestamp,
@@ -27,13 +26,15 @@ const firebase = initializeApp(firebaseConfig)
 const db = getFirestore(firebase)
 
 const reviewsCollection = collection(db, 'reviews')
-const reviewsQuery = query(reviewsCollection)
+const reviewsQuery = query(reviewsCollection, orderBy('time', 'desc'))
 
 export function useReviews() {
-	const getReviews = async () => {
-		const querySnapshot = await getDocs(reviewsQuery)
-		return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
-	}
+	const reviews = writable<any[]>([])
+
+	const unsubscribe = onSnapshot(reviewsQuery, snapshot => {
+		const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+		reviews.set(data)
+	})
 
 	const addReview = (data: {
 		name: string
@@ -42,9 +43,9 @@ export function useReviews() {
 	}) => {
 		addDoc(reviewsCollection, {
 			...data,
-			time: new Date(),
+			time: serverTimestamp(),
 		})
 	}
 
-	return { getReviews, addReview }
+	return { reviews, addReview, unsubscribe }
 }
