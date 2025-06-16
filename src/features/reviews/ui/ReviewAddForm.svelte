@@ -7,9 +7,9 @@
 	import { useReviews } from '../api/firebase'
 
 	const formDataSchema = z.object({
-		name: z.string().min(3),
-		message: z.string().min(2),
-		rating: z.number().positive(),
+		name: z.string().min(3, 'Name must contain at least 3 characters'),
+		message: z.string().min(2, 'Review must contain at least 2 characters'),
+		rating: z.number().positive('Set a rating'),
 	})
 
 	type FormData = z.infer<typeof formDataSchema>
@@ -23,7 +23,7 @@
 	let errors = $state<any>(undefined)
 
 	const validate = () => {
-		const res = formDataSchema.safeParse({ name, message, rating })
+		const res = formDataSchema.safeParse({ name, message, rating } as FormData)
 		if (res.success) return undefined
 
 		return res.error.format()
