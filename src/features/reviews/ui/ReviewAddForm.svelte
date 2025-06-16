@@ -3,6 +3,7 @@
 	import { Input } from '$shared/ui/kit/input'
 	import { Textarea } from '$shared/ui/kit/textarea'
 	import { Button } from '$shared/ui/kit/button'
+	import { ArrowRight } from '@lucide/svelte'
 	import RatingInput from './RatingInput.svelte'
 	import { useReviews } from '../api/firebase'
 
@@ -51,37 +52,50 @@
 	})
 </script>
 
-<div class="border border-white/5 rounded-xl px-6 py-6 group">
+<div class="border border-white/5 rounded-xl px-6 py-6 group" data-jump>
 	<h3 class="text-2xl mb-3.5 relative">
 		<span
-			class="bg-gradient-to-r from-amber-300/30 via-amber-300/90 to-amber-300/30 box-decoration-clone group-hover:opacity-30 opacity-0 transition text-transparent"
+			class="bg-gradient-to-r from-amber-300/30 via-amber-300/90 to-amber-300/30 box-decoration-clone group-hover:opacity-30 opacity-0 transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 text-transparent"
 			>Leave a feedback</span
 		>
 		<span class="absolute left-0 top-0">Leave a feedback</span>
 	</h3>
 	<div class="flex flex-col gap-2.5">
 		<div class="flex flex-col gap-1">
-			<Input class="bg-neutral-900!" placeholder="Name" bind:value={name} />
-			<div class="text-xs text-red-500">{errors?.name?._errors.join(', ')}</div>
+			<Input
+				class="bg-neutral-900! transition-all duration-250 ease-[cubic-bezier(0.65, 0, 0.35, 1)] hover:border-white/50"
+				placeholder="Name"
+				bind:value={name}
+				aria-invalid={!!errors?.name?._errors.length}
+			/>
+			<div class="text-xs text-red-400">{errors?.name?._errors.join(', ')}</div>
 		</div>
 		<div class="flex flex-col gap-1">
 			<Textarea
-				class="resize-none bg-neutral-900!"
+				class="resize-none bg-neutral-900! transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 hover:border-white/500"
 				placeholder="Review..."
 				bind:value={message}
+				aria-invalid={!!errors?.message?._errors.length}
 			/>
-			<div class="text-xs text-red-500">
+			<div class="text-xs text-red-400">
 				{errors?.message?._errors.join(', ')}
 			</div>
 		</div>
 		<div class="flex items-center justify-between">
 			<div class="flex items-center gap-2">
 				<RatingInput bind:value={rating} />
-				<div class="text-xs text-red-500">
+				<div class="text-xs text-red-400">
 					{errors?.rating?._errors.join(', ')}
 				</div>
 			</div>
-			<Button onclick={sendForm} disabled={errors}>Send</Button>
+			<Button
+				onclick={sendForm}
+				class="font-bold leading-none flex items-center pt-2 pr-2 pb-1 pl-3 hover:rounded-[0.95rem] transition-[border-radius] duration-250 ease-[cubic-bezier(0.65, 0, 0.35, 1)]"
+				disabled={errors}
+			>
+				<div>Send</div>
+				<div class="flex mt-[-0.2rem]"><ArrowRight /></div>
+			</Button>
 		</div>
 	</div>
 </div>
