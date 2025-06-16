@@ -72,7 +72,7 @@
 		</div>
 		<div class="flex flex-col gap-1">
 			<Textarea
-				class="resize-none bg-neutral-900! transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 hover:border-white/500"
+				class="resize-none bg-neutral-900! transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 hover:border-white/50"
 				placeholder="Review..."
 				bind:value={message}
 				aria-invalid={!!errors?.message?._errors.length}
