@@ -52,10 +52,10 @@
 	})
 </script>
 
-<div class="border border-white/5 rounded-xl px-6 py-6 group" data-jump>
+<div class="border border-white/5 rounded-xl px-6 py-6 group/form" data-jump>
 	<h3 class="text-2xl mb-3.5 relative">
 		<span
-			class="bg-gradient-to-r from-amber-300/30 via-amber-300/90 to-amber-300/30 box-decoration-clone group-hover:opacity-30 opacity-0 transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 text-transparent"
+			class="bg-gradient-to-r from-amber-300/30 via-amber-300/90 to-amber-300/30 box-decoration-clone group-hover/form:opacity-30 opacity-0 transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 text-transparent"
 			>Leave a feedback</span
 		>
 		<span class="absolute left-0 top-0">Leave a feedback</span>
@@ -90,11 +90,15 @@
 			</div>
 			<Button
 				onclick={sendForm}
-				class="font-bold leading-none flex items-center pt-2 pr-2 pb-1 pl-3 hover:rounded-[0.95rem] transition-[border-radius] duration-250 ease-[cubic-bezier(0.65, 0, 0.35, 1)]"
+				class="font-bold leading-none flex items-center pt-2 pr-2 pb-1 pl-3 hover:rounded-[0.95rem] transition-[border-radius] duration-250 ease-[cubic-bezier(0.65, 0, 0.35, 1)] group/btn"
 				disabled={errors}
 			>
 				<div>Send</div>
-				<div class="flex mt-[-0.2rem]"><ArrowRight /></div>
+				<div
+					class="flex mt-[-0.2rem] transition-transform duration-250 ease-[cubic-bezier(0.65, 0, 0.35, 1)] group-hover/btn:translate-x-[0.2rem]"
+				>
+					<ArrowRight />
+				</div>
 			</Button>
 		</div>
 	</div>
