@@ -7,7 +7,7 @@
 <Layout>
 	<Preview />
 	<div
-		class="mx-auto !mt-6 mb-8 max-w-[740px] w-full px-4 text-gray-1200 sm:mt-32 md:mb-12 md:mt-20"
+		class="mx-auto !mt-6 !mb-20 max-w-[740px] w-full px-4 text-gray-1200 sm:mt-32 md:mb-12 md:mt-20"
 	>
 		<ReviewBox />
 	</div>
