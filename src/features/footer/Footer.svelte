@@ -12,6 +12,7 @@
 		<div class="flex">
 			<Button
 				href="https://t.me/l3Dima"
+				target="_blank"
 				variant="ghost"
 				class="[&_svg:not([class*='size-'])]:size-6 h-min! p-[0.5rem]! relative text-[#24A1DE] hover:text-[#24A1DE] hover:bg-transparent! transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 before:content-[''] before:opacity-0 before:absolute before:h-full before:w-full before:scale-40 before:bg-[#24A1DE]/20 before:rounded-md before:transition before:duration-250 before:ease-[cubic-bezier(0.65, 0, 0.35, 1)] hover:before:opacity-100 hover:before:scale-100"
 			>
@@ -27,6 +28,7 @@
 			</Button>
 			<Button
 				href="https://github.com/Babic4"
+				target="_blank"
 				variant="ghost"
 				class="[&_svg:not([class*='size-'])]:size-6 h-min! p-[0.5rem]! relative text-white/80 hover:text-white/80 hover:bg-transparent! transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 before:content-[''] before:opacity-0 before:absolute before:h-full before:w-full before:scale-40 before:bg-white/20 before:rounded-md before:transition before:duration-250 before:ease-[cubic-bezier(0.65, 0, 0.35, 1)] hover:before:opacity-100 hover:before:scale-100"
 			>

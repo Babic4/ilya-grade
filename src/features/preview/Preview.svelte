@@ -1,5 +1,6 @@
 <script>
 	import { Button } from '$shared/ui/kit/button'
+	import * as Tooltip from '$shared/ui/kit/tooltip'
 
 	const badges = [
 		'Pick Me!',
@@ -29,36 +30,73 @@
 		</div>
 		<div class="flex flex-col gap-[2.2rem]">
 			<div>
-				<div class="flex items-center gap-[0.5rem]">
-					<h3 class="text-3xl font-bold">Ilya PYSbKA</h3>
-					<Button
-						href="https://t.me/PYSbKA"
-						variant="link"
-						class="text-[#24A1DE] [&_svg:not([class*='size-'])]:size-5"
-					>
-						<svg
-							role="img"
-							viewBox="0 0 24 24"
-							fill="currentColor"
-							xmlns="http://www.w3.org/2000/svg"
-							><title>Telegram</title><path
-								d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
-							/></svg
-						>
-					</Button>
+				<div class="flex items-center gap-[1rem] mb-2">
+					<h3 class="text-4xl font-bold">Ilya PYSbKA</h3>
+					<Tooltip.Provider delayDuration={250}>
+						<Tooltip.Root>
+							<Tooltip.Trigger>
+								<Button
+									variant="link"
+									class="[&_svg:not([class*='size-'])]:size-5 p-2! rounded-full"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										class="lucide lucide-link-icon lucide-link"
+										><path
+											d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+										/><path
+											d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+										/></svg
+									>
+								</Button>
+							</Tooltip.Trigger>
+							<Tooltip.Content
+								side="right"
+								class="bg-neutral-800 py-0.5 px-1"
+								arrowClasses="bg-neutral-800"
+							>
+								<Button
+									href="https://t.me/PYSbKA"
+									variant="link"
+									class="text-[#24A1DE] [&_svg:not([class*='size-'])]:size-5"
+								>
+									<svg
+										role="img"
+										viewBox="0 0 24 24"
+										fill="currentColor"
+										xmlns="http://www.w3.org/2000/svg"
+										><title>Telegram</title><path
+											d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+										/></svg
+									>
+								</Button>
+							</Tooltip.Content>
+						</Tooltip.Root>
+					</Tooltip.Provider>
 				</div>
 				<p class="text-neutral-500">
-					Best SUPPORT at <a
-						class="underline text-[#ffb300]"
+					Best SUPPORT at
+					<a
+						class="text-[#ffb300] transition duraction-250 ease-[cubic-bezier(0.65, 0, 0.35, 1)] border-b border-[#ffb300]/40 hover:border-[#ffb300]"
 						href="https://sms.by/"
-						target="_blank">SMS.BY</a
+						target="_blank"
 					>
+						SMS.BY
+					</a>
 				</p>
 			</div>
 			<div>
 				<p class="mb-2.5">
 					Hello! You can call me PYSbKA. I am a support, project manager,
-					working in SMS.BY
+					working at SMS.BY
 				</p>
 				<p class="mb-2.5">
 					I was born in 1999 in Jakarta, Indonesia. When the pandemic started 5
@@ -71,7 +109,7 @@
 					a lot
 				</p>
 				<p class="mb-2.5">Here are my current favorite achievements:</p>
-				<div class="flex flex-wrap gap-[0.3rem] mt-[1rem]">
+				<div class="flex flex-wrap gap-[0.3rem]">
 					{#each badges as badge}
 						<div
 							class="border-1 border-white/20 bg-neutral-800 text-[0.825rem] font-bold py-0.5 px-2.5 rounded-md"
