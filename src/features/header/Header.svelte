@@ -1,5 +1,6 @@
 <script>
 	import LinkButton from './LinkButton.svelte'
+	import Scramble from '$shared/ui/scramble/Scramble.svelte'
 
 	const scroll = () => {
 		const divJump = document.querySelector('div[data-jump]')
@@ -15,7 +16,12 @@
 	<div
 		class="flex justify-between py-2.5 px-[40px] items-center max-w-[820px] w-full mx-auto border-b-1 border-b-white/1 border-t-1 border-t-white/1"
 	>
-		<div class="leading-none">Grade ILYA.</div>
+		<Scramble
+			className="leading-none"
+			duration={2}
+			value="Grade ILYA."
+			as="div"
+		/>
 		<LinkButton onclick={scroll} />
 	</div>
 </header>
