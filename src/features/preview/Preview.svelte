@@ -19,12 +19,12 @@
 			<div
 				class="rounded-md overflow-hidden min-h-[200px] h-[200px] min-w-[200px] w-[200px] rotate-[-3deg] hover:rotate-0 transition-transform ease-[cubic-bezier(0.65, 0, 0.35, 1)] duraction-250"
 			>
-				<img src="/public/photo-2.jpg" alt="photo" />
+				<img src="/photo-2.jpg" alt="preview" />
 			</div>
 			<div
 				class="left-[54px] top-[240px] absolute rounded-md overflow-hidden min-h-[120px] h-[120px] min-w-[120px] w-[120px] rotate-[3deg] hover:rotate-0 transition-transform ease-[cubic-bezier(0.65, 0, 0.35, 1)] duraction-250"
 			>
-				<img src="/public/photo-1.jpg" alt="photo" />
+				<img src="/photo-1.jpg" alt="preview" />
 			</div>
 		</div>
 		<div class="flex flex-col gap-[2.2rem]">
