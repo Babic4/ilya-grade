@@ -1,5 +1,6 @@
 <script>
 	import { Button } from '$shared/ui/kit/button'
+	import Scramble from '$shared/ui/scramble/Scramble.svelte'
 	import * as Tooltip from '$shared/ui/kit/tooltip'
 
 	const badges = [
@@ -10,6 +11,8 @@
 		'People of Year 1999',
 		'KARP',
 	]
+
+	let trigger = $state(false)
 </script>
 
 <div
@@ -31,7 +34,15 @@
 		<div class="flex flex-col gap-[2.2rem]">
 			<div>
 				<div class="flex items-center gap-[1rem] mb-2">
-					<h3 class="text-4xl font-bold">Ilya PYSbKA</h3>
+					<Scramble
+						className="text-4xl font-bold"
+						duration={3}
+						value="Ilya PYSbKA"
+						{trigger}
+						onmouseenter={() => (trigger = true)}
+						onScrambleComplete={() => (trigger = false)}
+						as="h3"
+					/>
 					<Tooltip.Provider delayDuration={250}>
 						<Tooltip.Root>
 							<Tooltip.Trigger>
