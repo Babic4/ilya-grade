@@ -24,10 +24,10 @@
 			value="Grade ILYA."
 			as="div"
 		/>
-		<div class="flex gap-[0.5rem]">
+		<div class="flex items-center gap-[0.5rem]">
 			<Button
 				variant="ghost"
-				class="[&_svg:not([class*='size-'])]:size-6 h-min! p-[0.5rem]! relative hover:bg-transparent! transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 before:content-[''] before:opacity-0 before:absolute before:h-full before:w-full before:scale-40 before:bg-(--foreground)/10 before:rounded-md before:transition before:duration-250 before:ease-[cubic-bezier(0.65, 0, 0.35, 1)] hover:before:opacity-100 hover:before:scale-100"
+				class="[&_svg:not([class*='size-'])]:size-6 h-min! p-[6px]! relative hover:bg-transparent! transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 before:content-[''] before:opacity-0 before:absolute before:h-full before:w-full before:scale-40 before:bg-(--foreground)/10 before:rounded-md before:transition before:duration-250 before:ease-[cubic-bezier(0.65, 0, 0.35, 1)] hover:before:opacity-100 hover:before:scale-100"
 				onclick={toggleTheme}
 			>
 				<svg
