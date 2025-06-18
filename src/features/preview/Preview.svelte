@@ -23,14 +23,14 @@
 			class="relative flex items-center justify-center gap-[3rem] lg:ga-0 lg:justify-start lg:block"
 		>
 			<div
-				class="rounded-md overflow-hidden min-h-[200px] h-[200px] min-w-[200px] w-[200px] rotate-[-3deg] hover:rotate-0 transition-transform ease-[cubic-bezier(0.65, 0, 0.35, 1)] duraction-250"
+				class="rounded-xl overflow-hidden min-h-[200px] h-[200px] min-w-[200px] w-[200px] rotate-[-3deg] hover:rotate-0 transition-transform ease-[cubic-bezier(0.65, 0, 0.35, 1)] duraction-250 p-2.5 border border-(--border) bg-(--card) shadow-(--badge-shadow)"
 			>
-				<img src="/photo-2.jpg" alt="preview" />
+				<img class="rounded-sm" src="/photo-2.jpg" alt="preview" />
 			</div>
 			<div
-				class="hidden xs:block lg:left-[54px] lg:top-[240px] lg:absolute rounded-md overflow-hidden min-h-[120px] h-[120px] min-w-[120px] w-[120px] rotate-[3deg] hover:rotate-0 transition-transform ease-[cubic-bezier(0.65, 0, 0.35, 1)] duraction-250"
+				class="hidden xs:block lg:left-[50px] lg:top-[240px] lg:absolute rounded-xl overflow-hidden min-h-[160px] h-[160px] min-w-[160px] w-[160px] rotate-[3deg] hover:rotate-0 transition-transform ease-[cubic-bezier(0.65, 0, 0.35, 1)] duraction-250 p-2.5 border border-(--border) shadow-(--badge-shadow)"
 			>
-				<img src="/photo-1.jpg" alt="preview" />
+				<img class="rounded-sm" src="/photo-1.jpg" alt="preview" />
 			</div>
 		</div>
 		<div class="flex flex-col gap-[2.2rem]">
