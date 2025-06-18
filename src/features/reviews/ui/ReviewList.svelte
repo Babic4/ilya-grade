@@ -25,18 +25,15 @@
 	onMount(() => {
 		const observer = new IntersectionObserver(
 			([entry]) => {
-				// если элемент больше не пересекает родительскую область видимости сверху
-				// console.log(entry.boundingClientRect.top, entry.isIntersecting)
 				isStuck = entry.boundingClientRect.top < 76 && !entry.isIntersecting
 			},
 			{
 				threshold: [1],
 				root: null,
-				rootMargin: '-73.6px 0px 0px 0px', // отслеживаем "прилипание"
+				rootMargin: '-73.6px 0px 0px 0px',
 			}
 		)
 
-		console.log(stickyRef)
 		if (stickyRef) observer.observe(stickyRef)
 
 		return () => {
