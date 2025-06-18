@@ -6,10 +6,12 @@
 
 :root {
 	--radius: 0.625rem;
-	--background: oklch(1 0 0);
+	--background: #f5f5f4;
 	--foreground: oklch(0.141 0.005 285.823);
 	--card: oklch(1 0 0);
 	--card-foreground: oklch(0.141 0.005 285.823);
+	--badge: oklch(1 0 0);
+	--badge-shadow: var(--text-shadow-sm);
 	--popover: oklch(1 0 0);
 	--popover-foreground: oklch(0.141 0.005 285.823);
 	--primary: oklch(0.21 0.006 285.885);
@@ -21,8 +23,15 @@
 	--accent: oklch(0.967 0.001 286.375);
 	--accent-foreground: oklch(0.21 0.006 285.885);
 	--destructive: oklch(0.577 0.245 27.325);
-	--border: oklch(0.92 0.004 286.32);
+	--border: oklch(0 0 0 / 7%);
+	--border-badge: oklch(0 0 0 / 22%);
+	--border-ghost: oklch(0 0 0 / 3%);
+	--border-pop: oklch(0 0 0 / 8%);
 	--input: oklch(0.92 0.004 286.32);
+	--input-hover: oklch(0 0 0 / 50%);
+	--github: oklch(0.1763 0.014 258.36);
+	--github-hover: oklch(0.1763 0.014 258.36 / 20%);
+	--item-bg: oklch(87.9% 0.169 91.605 / 22%);
 	--ring: oklch(0.705 0.015 286.067);
 	--chart-1: oklch(0.646 0.222 41.116);
 	--chart-2: oklch(0.6 0.118 184.704);
@@ -43,8 +52,10 @@
 	/* --background: oklch(0.141 0.005 285.823); */
 	--background: #161616;
 	--foreground: oklch(0.985 0 0);
-	--card: oklch(0.21 0.006 285.885);
+	--card: oklch(20.5% 0 0);
 	--card-foreground: oklch(0.985 0 0);
+	--badge: oklch(26.9% 0 0);
+	--badge-shadow: none;
 	--popover: oklch(0.21 0.006 285.885);
 	--popover-foreground: oklch(0.985 0 0);
 	--primary: oklch(0.92 0.004 286.32);
@@ -56,8 +67,15 @@
 	--accent: oklch(0.274 0.006 286.033);
 	--accent-foreground: oklch(0.985 0 0);
 	--destructive: oklch(0.704 0.191 22.216);
-	--border: oklch(1 0 0 / 10%);
+	--border: oklch(1 0 0 / 5%);
+	--border-badge: oklch(1 0 0 / 20%);
+	--border-ghost: oklch(1 0 0 / 1%);
+	--border-pop: transparent;
 	--input: oklch(1 0 0 / 15%);
+	--input-hover: oklch(1 0 0 / 50%);
+	--github: oklch(1 0 0 / 80%);
+	--github-hover: oklch(1 0 0 / 20%);
+	--item-bg: oklch(87.9% 0.169 91.605 / 5%);
 	--ring: oklch(0.552 0.016 285.938);
 	--chart-1: oklch(0.488 0.243 264.376);
 	--chart-2: oklch(0.696 0.17 162.48);

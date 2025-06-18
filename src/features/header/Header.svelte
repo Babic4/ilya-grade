@@ -24,7 +24,7 @@
 
 <header class="z-10 sticky top-2 bg-(--background)/10 backdrop-blur-lg">
 	<div
-		class="flex justify-between py-2.5 px-[40px] items-center max-w-[820px] w-full mx-auto border-b-1 border-b-white/1 border-t-1 border-t-white/1"
+		class="flex justify-between py-2.5 px-[40px] items-center max-w-[820px] w-full mx-auto border-b-1 border-b-(--border-ghost) border-t-1 border-t-(--border-ghost)"
 	>
 		<Scramble
 			className="leading-none"

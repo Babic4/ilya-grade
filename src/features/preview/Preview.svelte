@@ -71,8 +71,8 @@
 							</Tooltip.Trigger>
 							<Tooltip.Content
 								side="right"
-								class="bg-neutral-800 py-0.5 px-1"
-								arrowClasses="bg-neutral-800"
+								class="bg-(--badge) py-0.5 px-1 border border-(--border-pop)"
+								arrowClasses="bg-(--badge) border-r-1 border-b-1 border-(--border-pop)"
 							>
 								<Button
 									href="https://t.me/PYSbKA"
@@ -123,7 +123,7 @@
 				<div class="flex flex-wrap gap-[0.3rem]">
 					{#each badges as badge}
 						<div
-							class="border-1 border-white/20 bg-neutral-800 text-[0.825rem] font-bold py-0.5 px-2.5 rounded-md"
+							class="border-1 border-(--border-badge) bg-(--badge) text-[0.825rem] font-bold py-0.5 px-2.5 rounded-md shadow-(--badge-shadow)"
 						>
 							{badge}
 						</div>

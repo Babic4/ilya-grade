@@ -21,7 +21,7 @@
 	}
 </script>
 
-<div class="border border-white/5 rounded-xl inset group">
+<div class="border border-(--border) rounded-xl inset group">
 	<div class="flex items-center justify-between gap-[2rem] px-6 py-3 relative">
 		<div class="flex items-center gap-[1rem]">
 			<p class="text-[0.825rem] tracking-wider text-neutral-500 relative">
@@ -33,7 +33,7 @@
 				<span class="absolute left-0 top-0">{review.name}</span>
 			</p>
 			<div
-				class="flex items-center justify-center gap-[0.5rem] px-1.5 py-0.5 rounded-md bg-amber-300/5"
+				class="flex items-center justify-center gap-[0.5rem] px-1.5 py-0.5 rounded-md bg-(--item-bg)"
 			>
 				<Star
 					size={14}
@@ -51,7 +51,7 @@
 		</div>
 	</div>
 	<div
-		class="isolate text-[1rem] relative px-6 py-6 rounded-xl border border-white/5 bg-neutral-900 overflow-hidden"
+		class="isolate text-[1rem] relative px-6 py-6 rounded-xl border border-(--border) bg-(--card) overflow-hidden"
 	>
 		{review.message}
 	</div>

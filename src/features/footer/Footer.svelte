@@ -4,7 +4,7 @@
 
 <footer>
 	<div
-		class="flex justify-between pt-[80px] pb-[40px] px-[40px] items-center max-w-[820px] w-full mx-auto border-t-1 border-t-white/5"
+		class="flex justify-between pt-[80px] pb-[40px] px-[40px] items-center max-w-[820px] w-full mx-auto border-t-1 border-t-(--border)"
 	>
 		<div class="text-[0.825rem] text-neutral-500 tracking-wider">
 			Copyright © 2025 Dmitriy Babich. All rights reserved.
@@ -30,7 +30,7 @@
 				href="https://github.com/Babic4"
 				target="_blank"
 				variant="ghost"
-				class="[&_svg:not([class*='size-'])]:size-6 h-min! p-[0.5rem]! relative text-white/80 hover:text-white/80 hover:bg-transparent! transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 before:content-[''] before:opacity-0 before:absolute before:h-full before:w-full before:scale-40 before:bg-white/20 before:rounded-md before:transition before:duration-250 before:ease-[cubic-bezier(0.65, 0, 0.35, 1)] hover:before:opacity-100 hover:before:scale-100"
+				class="[&_svg:not([class*='size-'])]:size-6 h-min! p-[0.5rem]! relative text-(--github) hover:text-(--github) hover:bg-transparent! transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 before:content-[''] before:opacity-0 before:absolute before:h-full before:w-full before:scale-40 before:bg-(--github-hover) before:rounded-md before:transition before:duration-250 before:ease-[cubic-bezier(0.65, 0, 0.35, 1)] hover:before:opacity-100 hover:before:scale-100"
 			>
 				<svg
 					role="img"

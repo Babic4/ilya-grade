@@ -52,7 +52,7 @@
 	})
 </script>
 
-<div class="border border-white/5 rounded-xl px-6 py-6 group/form" data-jump>
+<div class="border border-(--border) rounded-xl px-6 py-6 group/form" data-jump>
 	<h3 class="text-2xl mb-3.5 relative">
 		<span
 			class="bg-gradient-to-r from-amber-300/30 via-amber-300/90 to-amber-300/30 box-decoration-clone group-hover/form:opacity-30 opacity-0 transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 text-transparent"
@@ -63,7 +63,7 @@
 	<div class="flex flex-col gap-2.5">
 		<div class="flex flex-col gap-1">
 			<Input
-				class="bg-neutral-900! transition-all duration-250 ease-[cubic-bezier(0.65, 0, 0.35, 1)] hover:border-white/50"
+				class="bg-(--card)! transition-all duration-250 ease-[cubic-bezier(0.65, 0, 0.35, 1)] hover:border-(--input-hover)"
 				placeholder="Name"
 				bind:value={name}
 				aria-invalid={!!errors?.name?._errors.length}
@@ -72,7 +72,7 @@
 		</div>
 		<div class="flex flex-col gap-1">
 			<Textarea
-				class="resize-none bg-neutral-900! transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 hover:border-white/50"
+				class="resize-none bg-(--card)! transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 hover:border-(--input-hover)"
 				placeholder="Review..."
 				bind:value={message}
 				aria-invalid={!!errors?.message?._errors.length}
