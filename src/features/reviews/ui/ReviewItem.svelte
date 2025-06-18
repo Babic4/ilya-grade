@@ -24,15 +24,20 @@
 </script>
 
 <div class="border border-(--border) rounded-xl inset group">
-	<div class="flex items-center justify-between gap-[2rem] px-6 py-3 relative">
-		<div class="flex items-center gap-[1rem]">
-			<p class="text-[0.825rem] tracking-wider text-neutral-500 relative">
+	<div class="flex items-center gap-[2rem] px-6 py-3 relative">
+		<div class="flex items-center gap-[1rem] grow overflow-hidden">
+			<p
+				class="text-[0.825rem] tracking-wider text-neutral-500 relative whitespace-nowrap overflow-hidden text-ellipsis"
+			>
 				<span
-					class="bg-gradient-to-r from-black/30 via-black/90 to-black/30 box-decoration-clone group-hover:opacity-30 opacity-0 transition text-transparent"
+					class="w-full bg-gradient-to-r from-black/30 via-black/90 to-black/30 box-decoration-clone group-hover:opacity-30 opacity-0 transition text-transparent whitespace-nowrap overflow-hidden text-ellipsis"
 				>
 					{review.name}</span
 				>
-				<span class="absolute left-0 top-0">{review.name}</span>
+				<span
+					class="w-full absolute left-0 top-0 whitespace-nowrap overflow-hidden text-ellipsis"
+					>{review.name}</span
+				>
 			</p>
 			<div
 				class="flex items-center justify-center gap-[0.5rem] px-1.5 py-0.5 rounded-md bg-(--item-bg)"
@@ -42,12 +47,14 @@
 					color="oklch(87.9% 0.169 91.605)"
 					fill="oklch(87.9% 0.169 91.605)"
 				/>
-				<p class="text-[0.75rem]">{review.rating} star</p>
+				<p class="text-[0.75rem] whitespace-nowrap">{review.rating} star</p>
 			</div>
 		</div>
 		<div class="flex items-center gap-[0.5rem]">
 			<Clock size={14} color="oklch(55.6% 0 0)" />
-			<p class="text-[0.825rem] text-neutral-500 leading-none">
+			<p
+				class="text-[0.825rem] text-neutral-500 leading-none whitespace-nowrap"
+			>
 				{formatTime(review.time)}
 			</p>
 		</div>

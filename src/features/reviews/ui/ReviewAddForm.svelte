@@ -66,6 +66,7 @@
 				class="bg-(--card)! transition-all duration-250 ease-[cubic-bezier(0.65, 0, 0.35, 1)] hover:border-(--input-hover)"
 				placeholder="Name"
 				bind:value={name}
+				maxlength={100}
 				aria-invalid={!!errors?.name?._errors.length}
 			/>
 			<div class="text-xs text-red-400">{errors?.name?._errors.join(', ')}</div>
@@ -75,6 +76,7 @@
 				class="resize-none bg-(--card)! transition-all ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-250 hover:border-(--input-hover)"
 				placeholder="Review..."
 				bind:value={message}
+				maxlength={500}
 				aria-invalid={!!errors?.message?._errors.length}
 			/>
 			<div class="text-xs text-red-400">
