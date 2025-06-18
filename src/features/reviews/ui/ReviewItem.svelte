@@ -7,6 +7,8 @@
 		seconds: number
 		nanoseconds: number
 	}): string => {
+		if (time === null) return ''
+
 		const milliseconds =
 			time.seconds * 1000 + Math.floor(time.nanoseconds / 1e6)
 		const date = new Date(milliseconds)

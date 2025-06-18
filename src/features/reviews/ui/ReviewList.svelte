@@ -22,6 +22,8 @@
 		})
 	}
 
+	console.log($reviews)
+
 	onMount(() => {
 		const observer = new IntersectionObserver(
 			([entry]) => {
@@ -46,22 +48,26 @@
 	})
 </script>
 
-<div class="flex flex-col gap-3" data-up>
-	<div
-		bind:this={stickyRef}
-		class="sticky flex items-center justify-between px-6 py-3 top-[73.6px] border-b border-b-(--border) z-20 bg-(--background)/10 backdrop-blur-lg rounded-t-xl"
-	>
-		<span class="leading-[28px]">Reviews: {$reviews.length}</span>
-		{#if isStuck}
-			<Button
-				onclick={pullUp}
-				class="p-1.5! h-min transition-[border-radius] duration-250 ease-[cubic-bezier(0.65, 0, 0.35, 1)] hover:rounded-[0.70rem]"
-			>
-				<ArrowUp />
-			</Button>
-		{/if}
+{#if $reviews.length !== 0}
+	<div class="flex flex-col gap-3" data-up>
+		<div
+			bind:this={stickyRef}
+			class="sticky flex items-center justify-between px-6 py-3 top-[73.6px] border-b border-b-(--border) z-20 bg-(--background)/10 backdrop-blur-lg rounded-t-xl"
+		>
+			<span class="leading-[28px]">Reviews: {$reviews.length}</span>
+			{#if isStuck}
+				<Button
+					onclick={pullUp}
+					class="p-1.5! h-min transition-[border-radius] duration-250 ease-[cubic-bezier(0.65, 0, 0.35, 1)] hover:rounded-[0.70rem]"
+				>
+					<ArrowUp />
+				</Button>
+			{/if}
+		</div>
+		{#each $reviews as review}
+			<ReviewItem {review} />
+		{:else}
+			<p class="text-sm text-red-400 text-center p-4">Empty. Leave a review.</p>
+		{/each}
 	</div>
-	{#each $reviews as review}
-		<ReviewItem {review} />
-	{/each}
-</div>
+{/if}
