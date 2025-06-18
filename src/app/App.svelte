@@ -1,7 +1,13 @@
 <script lang="ts">
+	import { onMount } from 'svelte'
 	import Layout from './Layout.svelte'
 	import Preview from '../features/preview/Preview.svelte'
 	import ReviewBox from '../features/reviews/ReviewBox.svelte'
+	import { applyThemeFromStorage } from '$shared/lib/theme'
+
+	onMount(() => {
+		applyThemeFromStorage()
+	})
 </script>
 
 <Layout>
