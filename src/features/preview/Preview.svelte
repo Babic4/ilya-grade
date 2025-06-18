@@ -16,17 +16,19 @@
 </script>
 
 <div
-	class="mx-auto !mt-64 !mb-32 max-w-[740px] px-4 text-gray-1200 sm:mt-32 md:mb-12 md:mt-20"
+	class="mx-auto mt-24 md:mt-34 lg:!mt-64 mb-24 lg:!mb-32 max-w-[740px] px-4 text-gray-1200"
 >
-	<div class="flex gap-[2.5rem] grow">
-		<div class="relative">
+	<div class="flex gap-[4rem] lg:gap-[2.5rem] grow flex-col lg:flex-row">
+		<div
+			class="relative flex items-center justify-center gap-[3rem] lg:ga-0 lg:justify-start lg:block"
+		>
 			<div
 				class="rounded-md overflow-hidden min-h-[200px] h-[200px] min-w-[200px] w-[200px] rotate-[-3deg] hover:rotate-0 transition-transform ease-[cubic-bezier(0.65, 0, 0.35, 1)] duraction-250"
 			>
 				<img src="/photo-2.jpg" alt="preview" />
 			</div>
 			<div
-				class="left-[54px] top-[240px] absolute rounded-md overflow-hidden min-h-[120px] h-[120px] min-w-[120px] w-[120px] rotate-[3deg] hover:rotate-0 transition-transform ease-[cubic-bezier(0.65, 0, 0.35, 1)] duraction-250"
+				class="hidden xs:block lg:left-[54px] lg:top-[240px] lg:absolute rounded-md overflow-hidden min-h-[120px] h-[120px] min-w-[120px] w-[120px] rotate-[3deg] hover:rotate-0 transition-transform ease-[cubic-bezier(0.65, 0, 0.35, 1)] duraction-250"
 			>
 				<img src="/photo-1.jpg" alt="preview" />
 			</div>

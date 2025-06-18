@@ -24,7 +24,9 @@
 </script>
 
 <div class="border border-(--border) rounded-xl inset group">
-	<div class="flex items-center gap-[2rem] px-6 py-3 relative">
+	<div
+		class="flex flex-col md:flex-row md:items-center gap-[0.425rem] md:gap-[2rem] px-6 py-3 relative"
+	>
 		<div class="flex items-center gap-[1rem] grow overflow-hidden">
 			<p
 				class="text-[0.825rem] tracking-wider text-neutral-500 relative whitespace-nowrap overflow-hidden text-ellipsis"

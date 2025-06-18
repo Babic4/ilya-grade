@@ -4,7 +4,7 @@
 
 <footer>
 	<div
-		class="flex justify-between pt-[80px] pb-[40px] px-[40px] items-center max-w-[820px] w-full mx-auto border-t-1 border-t-(--border)"
+		class="flex justify-between gap-[1rem] pt-[52px] md:pt-[80px] pb-[32px] md:pb-[40px] px-4 md:px-[40px] items-center max-w-[820px] w-full mx-auto border-t-1 border-t-(--border)"
 	>
 		<div class="text-[0.825rem] text-neutral-500 tracking-wider">
 			Copyright © 2025 Dmitriy Babich. All rights reserved.
