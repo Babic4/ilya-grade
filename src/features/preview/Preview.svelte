@@ -1,7 +1,8 @@
 <script>
+	import { onMount } from 'svelte'
+	import { writable } from 'svelte/store'
 	import { Button } from '$shared/ui/kit/button'
 	import Scramble from '$shared/ui/scramble/Scramble.svelte'
-	import * as Tooltip from '$shared/ui/kit/tooltip'
 	import * as Popover from '$shared/ui/kit/popover'
 
 	const badges = [
@@ -14,6 +15,13 @@
 	]
 
 	let trigger = $state(false)
+
+	const isTouch = writable(false)
+	const isOpen = writable(false)
+
+	onMount(() => {
+		isTouch.set(window.matchMedia('(pointer: coarse)').matches)
+	})
 </script>
 
 <div
@@ -46,8 +54,18 @@
 						onScrambleComplete={() => (trigger = false)}
 						as="h3"
 					/>
-					<Popover.Root>
-						<Popover.Trigger>
+					<Popover.Root bind:open={$isOpen}>
+						<Popover.Trigger
+							onmouseenter={() => {
+								if (!$isTouch) isOpen.set(true)
+							}}
+							onmouseleave={() => {
+								if (!$isTouch) isOpen.set(false)
+							}}
+							onclick={() => {
+								if ($isTouch) isOpen.update(v => !v)
+							}}
+						>
 							<Button
 								variant="link"
 								class="[&_svg:not([class*='size-'])]:size-5 p-2! rounded-full"
