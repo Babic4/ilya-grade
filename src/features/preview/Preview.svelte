@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte'
 	import { Button } from '$shared/ui/kit/button'
 	import Scramble from '$shared/ui/scramble/Scramble.svelte'
 	import * as Popover from '$shared/ui/kit/popover'
@@ -14,13 +13,6 @@
 	]
 
 	let trigger = $state(false)
-
-	let isTouch = $state(false)
-	let isOpen = $state(false)
-
-	onMount(() => {
-		isTouch = window.matchMedia('(pointer: coarse)').matches
-	})
 </script>
 
 <div
@@ -53,18 +45,8 @@
 						onScrambleComplete={() => (trigger = false)}
 						as="h3"
 					/>
-					<Popover.Root bind:open={isOpen}>
-						<Popover.Trigger
-							onmouseenter={() => {
-								if (!isTouch) isOpen = true
-							}}
-							onmouseleave={() => {
-								if (!isTouch) isOpen = false
-							}}
-							onclick={() => {
-								if (isTouch) isOpen = !isOpen
-							}}
-						>
+					<Popover.Root>
+						<Popover.Trigger>
 							<Button
 								variant="link"
 								class="[&_svg:not([class*='size-'])]:size-5 p-2! rounded-full"
