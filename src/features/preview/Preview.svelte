@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte'
-	import { writable } from 'svelte/store'
 	import { Button } from '$shared/ui/kit/button'
 	import Scramble from '$shared/ui/scramble/Scramble.svelte'
 	import * as Popover from '$shared/ui/kit/popover'
@@ -16,11 +15,11 @@
 
 	let trigger = $state(false)
 
-	const isTouch = writable(false)
-	const isOpen = writable(false)
+	let isTouch = $state(false)
+	let isOpen = $state(false)
 
 	onMount(() => {
-		isTouch.set(window.matchMedia('(pointer: coarse)').matches)
+		isTouch = window.matchMedia('(pointer: coarse)').matches
 	})
 </script>
 
@@ -54,16 +53,16 @@
 						onScrambleComplete={() => (trigger = false)}
 						as="h3"
 					/>
-					<Popover.Root bind:open={$isOpen}>
+					<Popover.Root bind:open={isOpen}>
 						<Popover.Trigger
 							onmouseenter={() => {
-								if (!$isTouch) isOpen.set(true)
+								if (!isTouch) isOpen = true
 							}}
 							onmouseleave={() => {
-								if (!$isTouch) isOpen.set(false)
+								if (!isTouch) isOpen = false
 							}}
 							onclick={() => {
-								if ($isTouch) isOpen.update(v => !v)
+								if (isTouch) isOpen = !isOpen
 							}}
 						>
 							<Button
