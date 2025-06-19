@@ -2,6 +2,7 @@
 	import { Button } from '$shared/ui/kit/button'
 	import Scramble from '$shared/ui/scramble/Scramble.svelte'
 	import * as Tooltip from '$shared/ui/kit/tooltip'
+	import * as Popover from '$shared/ui/kit/popover'
 
 	const badges = [
 		'Pick Me!',
@@ -45,55 +46,53 @@
 						onScrambleComplete={() => (trigger = false)}
 						as="h3"
 					/>
-					<Tooltip.Provider delayDuration={250}>
-						<Tooltip.Root>
-							<Tooltip.Trigger>
-								<Button
-									variant="link"
-									class="[&_svg:not([class*='size-'])]:size-5 p-2! rounded-full"
-								>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="24"
-										height="24"
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										class="lucide lucide-link-icon lucide-link"
-										><path
-											d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
-										/><path
-											d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
-										/></svg
-									>
-								</Button>
-							</Tooltip.Trigger>
-							<Tooltip.Content
-								side="right"
-								class="bg-(--badge) py-0.5 px-1 border border-(--border-pop)"
-								arrowClasses="bg-(--badge) border-r-1 border-b-1 border-(--border-pop)"
+					<Popover.Root>
+						<Popover.Trigger>
+							<Button
+								variant="link"
+								class="[&_svg:not([class*='size-'])]:size-5 p-2! rounded-full"
 							>
-								<Button
-									href="https://t.me/PYSbKA"
-									variant="link"
-									class="text-[#24A1DE] [&_svg:not([class*='size-'])]:size-5"
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									class="lucide lucide-link-icon lucide-link"
+									><path
+										d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+									/><path
+										d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+									/></svg
 								>
-									<svg
-										role="img"
-										viewBox="0 0 24 24"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-										><title>Telegram</title><path
-											d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
-										/></svg
-									>
-								</Button>
-							</Tooltip.Content>
-						</Tooltip.Root>
-					</Tooltip.Provider>
+							</Button></Popover.Trigger
+						>
+						<Popover.Content
+							side="right"
+							class="bg-(--badge) py-0.5 px-1 border border-(--border-pop)"
+							arrowClasses="bg-(--badge) border-r-1 border-b-1 border-(--border-pop)"
+						>
+							<Button
+								href="https://t.me/PYSbKA"
+								variant="link"
+								class="text-[#24A1DE] [&_svg:not([class*='size-'])]:size-5"
+							>
+								<svg
+									role="img"
+									viewBox="0 0 24 24"
+									fill="currentColor"
+									xmlns="http://www.w3.org/2000/svg"
+									><title>Telegram</title><path
+										d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+									/></svg
+								>
+							</Button>
+						</Popover.Content>
+					</Popover.Root>
 				</div>
 				<p class="text-neutral-500">
 					Best SUPPORT at
