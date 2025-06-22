@@ -62,7 +62,7 @@
 		</div>
 	</div>
 	<div
-		class="isolate text-[1rem] relative px-6 py-6 rounded-xl border border-(--border) bg-(--card) overflow-hidden"
+		class="isolate text-[1rem] relative px-6 py-6 rounded-xl border border-(--border) bg-(--card) overflow-hidden wrap-break-word"
 	>
 		{review.message}
 	</div>

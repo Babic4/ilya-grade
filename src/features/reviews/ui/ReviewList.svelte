@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onDestroy, onMount } from 'svelte'
 	import { Button } from '$shared/ui/kit/button'
-	import { ArrowUp } from '@lucide/svelte'
+	import { ArrowUp, Star } from '@lucide/svelte'
 	import ReviewItem from './ReviewItem.svelte'
 	import { useReviews } from '../api/firebase'
 
@@ -20,6 +20,11 @@
 			top: topPosition + scrollTop - 120,
 			behavior: 'smooth',
 		})
+	}
+
+	const average = () => {
+		const sum = $reviews.reduce((acc, review) => acc + review.rating, 0)
+		return sum / $reviews.length
 	}
 
 	onMount(() => {
@@ -51,7 +56,24 @@
 		bind:this={stickyRef}
 		class="sticky flex items-center justify-between px-6 py-3 top-[73.6px] border-b border-b-(--border) z-20 bg-(--background)/10 backdrop-blur-lg rounded-t-xl"
 	>
-		<span class="leading-[28px]">Reviews: {$reviews.length}</span>
+		<div class="flex items-center gap-[1.3rem]">
+			<div class="leading-[28px]">Reviews: {$reviews.length}</div>
+			{#if $reviews.length !== 0}
+				<div class="flex leading-[28px] gap-[0.4rem]">
+					<span>Rating:</span>
+					<div
+						class="flex gap-[0.4rem] rounded-md px-2 items-center justify-center bg-(--item-bg)"
+					>
+						<span>{average()}</span>
+						<Star
+							size={18}
+							color="oklch(87.9% 0.169 91.605)"
+							fill="oklch(87.9% 0.169 91.605)"
+						/>
+					</div>
+				</div>
+			{/if}
+		</div>
 		{#if isStuck}
 			<Button
 				onclick={pullUp}
