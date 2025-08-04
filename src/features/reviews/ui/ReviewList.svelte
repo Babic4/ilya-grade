@@ -24,7 +24,8 @@
 
 	const average = () => {
 		const sum = $reviews.reduce((acc, review) => acc + review.rating, 0)
-		return sum / $reviews.length
+		const avg = sum / $reviews.length
+		return avg.toFixed(1)
 	}
 
 	onMount(() => {
